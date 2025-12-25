@@ -9,7 +9,7 @@ const App = () => {
         Expense tracker
       </h1>
       {/* grid columns */}
-      <div className="grid md:grid-cols-2">
+      <div className="grid md:grid-cols-2 gap-10">
         {/* chart */}
         <div>
           <Graph />
