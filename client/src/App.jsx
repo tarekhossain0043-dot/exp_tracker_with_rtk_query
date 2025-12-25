@@ -1,6 +1,7 @@
 import React from "react";
 import Graph from "./components/Graph";
 import Form from "./components/Form";
+import List from "./components/List";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         {/* form */}
         <div>
           <Form />
+          <List />
         </div>
       </div>
     </div>
