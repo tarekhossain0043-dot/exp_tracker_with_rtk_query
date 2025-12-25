@@ -6,6 +6,7 @@ export default function List() {
       id: 1,
       type: "Savings",
       color: "bg-pink-500",
+      col: "#ff3d4f",
     },
     {
       id: 2,
@@ -38,7 +39,9 @@ const ListTypes = ({ data }) => {
         className={`w-3 h-full ${data.color} rounded-full absolute rounded-lg right-0 top-0 bottom-0`}
       ></span>
       <span>
-        <DeleteIcon className="w-4 h-4 fill-red-400 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out" />
+        <DeleteIcon
+          className={`w-5 h-5 stroke-red-400 hover:stroke-green-400 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out`}
+        />
       </span>
       <span className="text-xl justify-center pr-12 font-bold text-slate-800 capitalize">
         {data.type}
