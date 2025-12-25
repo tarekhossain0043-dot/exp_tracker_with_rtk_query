@@ -1,6 +1,7 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJs, ArcElement, Tooltip, Legend } from "chart.js";
+import Label from "./Label";
 
 ChartJs.register(ArcElement, Tooltip, Legend);
 
@@ -35,7 +36,7 @@ const config = {
 };
 export default function Graph() {
   return (
-    <div className="flex justify-center items-center max-w-sm mx-auto">
+    <div className="flex flex-col gap-5 justify-between items-center max-w-sm mx-auto">
       <div className="item relative">
         <Doughnut {...config} />
         <div className="absolute top-0 left-0 w-full h-full flex flex-col gap-2 items-center justify-center">
@@ -43,6 +44,8 @@ export default function Graph() {
           <span className="text-emerald-500 text-2xl">${0}</span>
         </div>
       </div>
+      {/* label  */}
+      <Label />
     </div>
   );
 }
