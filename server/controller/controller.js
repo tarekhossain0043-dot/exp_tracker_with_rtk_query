@@ -5,11 +5,3 @@ function create_categories(req, res) {
 module.exports = {
   create_categories,
 };
-
-// function create_categories(req, res) {
-//   res.json("GET Request from Category");
-// }
-
-// module.exports = {
-//   create_categories,
-// };
