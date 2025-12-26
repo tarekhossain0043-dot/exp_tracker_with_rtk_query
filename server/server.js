@@ -12,8 +12,20 @@ app.use(express.json());
 // routes
 app.use(require("./routes/route"));
 
-// run server
+// server connection
+const con = require("./db/connection");
+con
+  .then((dbConn) => {
+    if (!dbConn) return process.exit(1);
+    // run server
 
-app.listen(port, () =>
-  console.log(`server run on the port :http://localhost:${port}`)
-);
+    app.listen(port, () =>
+      console.log(`server run on the port :http://localhost:${port}`)
+    );
+    app.on("error", (err) => {
+      console.log("failed to connection on the http server");
+    });
+  })
+  .catch((err) => {
+    console.log("connection failed", err);
+  });
