@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 5600;
+require("dotenv").config({ path: "./config.env" });
+const port = process.env.SERVER_PORT || 5600;
 
 // middleware
 
@@ -13,7 +14,9 @@ app.use(require("./routes/route"));
 
 // run server
 
-app.listen(port, () => console.log(`server run on the port : ${port}`));
+app.listen(port, () =>
+  console.log(`server run on the port :http://localhost:${port}`)
+);
 
 // const express = require("express");
 // const app = express();

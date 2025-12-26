@@ -11,6 +11,7 @@ client/node_modules
 server/node_modules
 .env
 .evn.local
+config.env
 
 dist
 dist-ssr
