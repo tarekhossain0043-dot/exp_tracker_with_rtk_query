@@ -1,14 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 56798;
+const port = 5600;
 
-// middle ware
+// middleware
 
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 
-app.listen(port, () => console.log(`server started with port : ${port}`));
+// run server
+
+app.listen(port, () => console.log(`server run on the port : ${port}`));
 
 // const express = require("express");
 // const app = express();
