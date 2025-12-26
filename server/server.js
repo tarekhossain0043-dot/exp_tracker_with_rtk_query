@@ -8,6 +8,9 @@ const port = 5600;
 app.use(cors());
 app.use(express.json());
 
+// routes
+app.use(require("./routes/route"));
+
 // run server
 
 app.listen(port, () => console.log(`server run on the port : ${port}`));
