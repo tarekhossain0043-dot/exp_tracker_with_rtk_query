@@ -17,5 +17,11 @@ const transition_model = new schema({
   date: { type: Date, default: Date.now },
 });
 
-mongoose.model("category", category_model);
-mongoose.model("transition", transition_model);
+const Category = mongoose.model("category", category_model);
+const Transition = mongoose.model("transition", transition_model);
+
+exports.default = Transition;
+module.exports = {
+  Category,
+  Transition,
+};
