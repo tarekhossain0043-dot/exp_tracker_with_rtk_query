@@ -13,7 +13,7 @@ const category_model = new schema({
 const transition_model = new schema({
   type: { type: String, default: "anonimus" },
   name: { type: String, default: "investment" },
-  amout: { type: Number },
+  amount: { type: Number, default: 300 },
   date: { type: Date, default: Date.now },
 });
 

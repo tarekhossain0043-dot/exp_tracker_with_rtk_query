@@ -8,4 +8,6 @@ routes
   .post(controller.create_categories)
   .get(controller.get_category);
 
+routes.route("/api/transitions").post(controller.create_transition);
+
 module.exports = routes;

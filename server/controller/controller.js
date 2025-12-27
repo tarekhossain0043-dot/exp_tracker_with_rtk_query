@@ -28,18 +28,27 @@ async function get_category(req, res) {
 }
 
 //--post--http://localhost:8080/api/transtions
-async function create_transitoin(req, res) {
+async function create_transition(req, res) {
   if (!req.body) return res.status(400).json(`Post HTTP data not Provided`);
-  let { type, name, amout } = req.body;
+  let { type, name, amount } = req.body;
   const create = await new model.Transition({
     type,
     name,
-    amout,
+    amount,
     date: new Date(),
   });
+  try {
+    await create.save();
+    return res.json(create);
+  } catch (err) {
+    return res
+      .status(400)
+      .json({ message: `Error while creating transition ${err}` });
+  }
 }
 
 module.exports = {
   create_categories,
   get_category,
+  create_transition,
 };
